@@ -1,0 +1,183 @@
+@primary-color: #EEE214;
+@primary-color-dark: rgb(219, 209, 21);
+@dark: #101010;
+
+@btn-font-weight: 600;
+@btn-primary-clor: #fff;
+@btn-primary-bg: @primary-color;
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .ant-layout-sider {
+    position: fixed;
+    height: 100%;
+    box-shadow: 0 4px 6px #626262;
+    z-index: 9999;
+  }
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  min-height: 60vh;
+  line-height: 160px;
+  background: @primary-color;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .6)), url('/static/images/header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ant-carousel .slick-slide[data-index="1"] {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .6)), url('/static/images/office.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+div.slick-slide {
+  .centered-content !important;
+
+  >div {
+    width: 100%;
+  }
+}
+
+.ant-carousel .slick-dots li button {
+  height: 8px;
+}
+
+
+.ant-card-cover {
+  max-height: 225px;
+  padding: 10px;
+
+  svg {
+    max-height: 225px;
+    width: 100%;
+    font-size: 182px;
+    padding: 10px 0;
+  }
+}
+
+.ant-card-meta-description a,
+.ant-descriptions-item-content a,
+  {
+  color: @primary-color-dark;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.ant-descriptions-item-content svg {
+  font-size: 30px;
+}
+
+.ant-layout-header {
+  background: @dark;
+  color: white;
+  box-shadow: 0 2px 2px #626262;
+}
+
+.header-icon {
+  color: @primary-color;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
+  top: 10px;
+}
+
+.ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
+  background: @dark;
+}
+
+.ant-menu.ant-menu-light.ant-menu-root.ant-menu-inline {
+  background: whitesmoke;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: @primary-color;
+  color: @dark;
+
+}
+
+.ant-menu-inline .ant-menu-selected::after,
+.ant-menu-inline .ant-menu-item-selected::after {
+  border-color: @dark;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.form-description {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  border: 1px solid #e8e8e8;
+  overflow: auto;
+  height: 300px;
+}
+
+.deploy-info {
+  position: fixed;
+  z-index: 100;
+  top: 38px;
+  right: 50px;
+  width: 400px;
+  background: rgb(226, 40, 40);
+}
+
+.deploy-info__panel {}
+
+.ant-collapse-content>.ant-collapse-content-box {
+  padding: 0;
+}
+
+.ant-layout-sider-zero-width-trigger {
+  top: 13px;
+}
+
+
+.anticon-bars {
+  color: @primary-color;
+}
+
+.ant-list-item-meta-description {
+  margin-left: 20px;
+}
+
+.ant-form-item-has-success.ant-form-item-has-feedback .ant-form-item-children-icon {
+  right: -30px;
+}
+
+span.ant-avatar.ant-avatar-circle.ant-avatar-image {
+  width: 75px;
+  height: 75px;
+}
+
+.card-description {
+  margin-bottom: 10px;
+}
+
+.icon-link {
+  margin-left: 10px;
+  color: #8b8b8b;
+}
+
+.ant-layout-sider {
+  background: whitesmoke;
+  box-shadow: 0 2px 2px #626262;
+}

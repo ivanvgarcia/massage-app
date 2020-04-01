@@ -1,0 +1,18 @@
+.slide {
+    width: 100%;
+    line-height: 1;
+    color: #fff;
+}
+
+.slide-title {
+    color: #fff;
+    font-size: 2.6rem;
+}
+
+.slide-description {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 90%;
+    width: 600px;
+    margin: 0 auto;
+}

@@ -1,0 +1,44 @@
+name: CI/CD
+
+on: [push, pull_request]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build Package
+        run: yarn run build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: public
+          path: public
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: Deploy to S3 Staging
+        if: github.ref == 'refs/heads/master'
+        run: aws s3 sync ./build s3://hivelocity-react
+
+      - name: Invalidate Cloudfront CDN Staging
+        if: github.ref == 'refs/heads/master'
+        run: aws cloudfront create-invalidation --distribution-id=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'

@@ -1,0 +1,10 @@
+.container {
+    max-width: 90%;
+    width: 130rem;
+    margin: 0 auto;
+}
+
+.heading {
+    margin: 3rem 0;
+    text-align: center;
+}
